@@ -8,11 +8,11 @@ const Router = () => {
     {
       path: "/",
       element: <App />,
-    //   children: [
-        //   { index: true, element: <HomePage /> },
-        //   { path: "shop/:category", element: <ShopPage /> },
-        //   { path: "shopping-cart", element: <ShoppingCart /> },
-    //   ],
+      //   children: [
+      //   { index: true, element: <HomePage /> },
+      //   { path: "shop/:category", element: <ShopPage /> },
+      //   { path: "shopping-cart", element: <ShoppingCart /> },
+      //   ],
       errorElement: <ErrorPage />,
     },
   ]);
