@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-import LandingPage from "./components/LandingPage.jsx";
+import LandingPage from "./components/LandingPage";
 
 import "./App.scss";
 
