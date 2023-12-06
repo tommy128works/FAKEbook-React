@@ -1,4 +1,5 @@
-import PropTypes from "prop-types"; // no props received yet
+// import PropTypes from "prop-types"; // no props received yet
+import React from "react";
 const NUMBER_OF_MONTHS = 12;
 const MAX_NUMBER_OF_DAYS = 31;
 const MAX_YEARS = 120;
@@ -20,7 +21,7 @@ const LandingPage = () => {
     "Nov",
     "Dec",
   ];
-  const months = [];
+  const months: React.JSX.Element[] = [];
 
   for (let i = 0; i < NUMBER_OF_MONTHS; i++) {
     months.push(
@@ -30,7 +31,7 @@ const LandingPage = () => {
     );
   }
 
-  const days = [];
+  const days: React.JSX.Element[] = [];
   for (let i = 0; i < MAX_NUMBER_OF_DAYS; i++) {
     days.push(
       <option value={i + 1} key={i}>
@@ -39,7 +40,7 @@ const LandingPage = () => {
     );
   }
 
-  const years = [];
+  const years: React.JSX.Element[] = [];
   const currentYear = new Date().getFullYear();
   for (let i = currentYear; i > currentYear - MAX_YEARS; i--) {
     years.push(
@@ -97,7 +98,7 @@ const LandingPage = () => {
 
         <button
           type="button"
-          id="sign-up__button"
+          className="button--success"
           onClick={() => openModal("sign-up__modal")}
         >
           Create new account
@@ -122,13 +123,13 @@ const LandingPage = () => {
                 type="text"
                 id="first_name"
                 placeholder="First name"
-                className="sign-up-form__input--gray-theme"
+                className="sign-up-form__input sign-up-form__input--gray-theme"
               />
               <input
                 type="text"
                 id="last_name"
                 placeholder="Last name"
-                className="sign-up-form__input--gray-theme"
+                className="sign-up-form__input sign-up-form__input--gray-theme"
               />
             </div>
             <input
@@ -136,39 +137,51 @@ const LandingPage = () => {
               id="sign-up_email"
               name="sign-up_email"
               placeholder="Email"
-              className="sign-up-form__input--gray-theme"
+              className="sign-up-form__input sign-up-form__input--gray-theme"
             />
             <input
               type="password"
               id="sign-up_password"
               name="sign-up_password"
               placeholder="New password"
-              className="sign-up-form__input--gray-theme"
+              className="sign-up-form__input sign-up-form__input--gray-theme"
             />
             <div className="sign-up-form__sub-heading">Birthday</div>
             <div className="sign-up-form__multiple-input-row">
-              <select name="month" id="month">
+              <select
+                name="month"
+                id="month"
+                className="sign-up-form__input sign-up-form__input--default-theme"
+              >
                 {months}
               </select>
-              <select name="day" id="day">
+              <select
+                name="day"
+                id="day"
+                className="sign-up-form__input sign-up-form__input--default-theme"
+              >
                 {days}
               </select>
-              <select name="year" id="year">
+              <select
+                name="year"
+                id="year"
+                className="sign-up-form__input sign-up-form__input--default-theme"
+              >
                 {years}
               </select>
             </div>
             <div className="sign-up-form__sub-heading">Gender</div>
             <div className="sign-up-form__multiple-input-row">
-              <div className="radio-input">
+              <div className="sign-up-form__input sign-up-form__input--default-theme radio-input">
                 <label htmlFor="female">Female</label>
                 <input type="radio" id="female" name="gender" value="female" />
               </div>
-              <div className="radio-input">
+              <div className="sign-up-form__input sign-up-form__input--default-theme radio-input">
                 <label htmlFor="male">Male</label>
                 <input type="radio" id="male" name="gender" value="male" />
               </div>
             </div>
-            <input type="submit" value="Sign Up" className="sign-up-button" />
+            <input type="submit" value="Sign Up" className="button--success" />
           </form>
         </div>
       </div>
