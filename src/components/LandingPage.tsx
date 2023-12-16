@@ -3,6 +3,7 @@ import React from "react";
 const NUMBER_OF_MONTHS = 12;
 const MAX_NUMBER_OF_DAYS = 31;
 const MAX_YEARS = 120;
+const user_sign_up_post_url = "http://localhost:3000/sign-up";
 
 import "../styles/LandingPage.scss";
 
@@ -25,7 +26,7 @@ const LandingPage = () => {
 
   for (let i = 0; i < NUMBER_OF_MONTHS; i++) {
     months.push(
-      <option value={i + 1} key={i}>
+      <option value={i} key={i}>
         {monthNames[i]}
       </option>,
     );
@@ -117,32 +118,34 @@ const LandingPage = () => {
             <h1>Sign Up</h1>
             <h2>It&apos;s quick and easy.</h2>
           </div>
-          <form id="sign-up-form">
+          <form id="sign-up-form" action={user_sign_up_post_url} method="POST">
             <div className="sign-up-form__multiple-input-row">
               <input
                 type="text"
                 id="first_name"
+                name="first_name"
                 placeholder="First name"
                 className="sign-up-form__input sign-up-form__input--gray-theme"
               />
               <input
                 type="text"
                 id="last_name"
+                name="last_name"
                 placeholder="Last name"
                 className="sign-up-form__input sign-up-form__input--gray-theme"
               />
             </div>
             <input
               type="text"
-              id="sign-up_email"
-              name="sign-up_email"
+              id="sign_up_email"
+              name="sign_up_email"
               placeholder="Email"
               className="sign-up-form__input sign-up-form__input--gray-theme"
             />
             <input
               type="password"
-              id="sign-up_password"
-              name="sign-up_password"
+              id="sign_up_password"
+              name="sign_up_password"
               placeholder="New password"
               className="sign-up-form__input sign-up-form__input--gray-theme"
             />

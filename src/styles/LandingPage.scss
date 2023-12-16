@@ -174,7 +174,6 @@
       }
 
       .sign-up-form__input--gray-theme {
-        color: #aaa;
         background-color: #eeeeee;
       }
       
@@ -185,6 +184,11 @@
 
       .radio-input {
         position: relative;
+        display: flex;
+
+        label {
+          flex: 1;
+        }
 
         input {
           position: absolute;
