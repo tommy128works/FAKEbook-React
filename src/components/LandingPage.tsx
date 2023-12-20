@@ -125,32 +125,37 @@ const LandingPage = () => {
                 type="text"
                 id="first_name"
                 name="first_name"
-                placeholder="First name"
+                placeholder="*First name"
                 className="sign-up-form__input sign-up-form__input--gray-theme"
+                required
               />
               <input
                 type="text"
                 id="last_name"
                 name="last_name"
-                placeholder="Last name"
+                placeholder="*Last name"
                 className="sign-up-form__input sign-up-form__input--gray-theme"
+                required
               />
             </div>
             <input
-              type="text"
+              type="email"
               id="sign_up_email"
               name="sign_up_email"
-              placeholder="Email"
+              placeholder="*Email"
               className="sign-up-form__input sign-up-form__input--gray-theme"
+              required
             />
             <input
               type="password"
               id="sign_up_password"
               name="sign_up_password"
-              placeholder="New password"
+              placeholder="*New password"
               className="sign-up-form__input sign-up-form__input--gray-theme"
+              required
+              minLength={6}
             />
-            <div className="sign-up-form__sub-heading">Birthday</div>
+            <div className="sign-up-form__sub-heading">*Birthday</div>
             <div className="sign-up-form__multiple-input-row">
               <select
                 name="month"
@@ -174,15 +179,15 @@ const LandingPage = () => {
                 {years}
               </select>
             </div>
-            <div className="sign-up-form__sub-heading">Gender</div>
+            <div className="sign-up-form__sub-heading">*Gender</div>
             <div className="sign-up-form__multiple-input-row">
               <div className="sign-up-form__input sign-up-form__input--default-theme radio-input">
                 <label htmlFor="female">Female</label>
-                <input type="radio" id="female" name="gender" value="female" />
+                <input type="radio" id="female" name="gender" value="female" required />
               </div>
               <div className="sign-up-form__input sign-up-form__input--default-theme radio-input">
                 <label htmlFor="male">Male</label>
-                <input type="radio" id="male" name="gender" value="male" />
+                <input type="radio" id="male" name="gender" value="male" required />
               </div>
             </div>
             <input type="submit" value="Sign Up" className="button--success" />
