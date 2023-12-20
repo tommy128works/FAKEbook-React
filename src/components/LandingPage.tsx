@@ -76,16 +76,18 @@ const LandingPage = () => {
       <div id="landing-page__right-section">
         <form id="log-in-form" action={user_log_in_post_url} method="POST">
           <input
-            type="text"
+            type="email"
             id="log_in_email"
             name="log_in_email"
-            placeholder="Email"
+            placeholder="*Email"
+            required
           />
           <input
             type="password"
             id="log_in_password"
             name="log_in_password"
-            placeholder="Password"
+            placeholder="*Password"
+            required
           />
           <input type="submit" value="Log In" className="log-in-button" />
         </form>
