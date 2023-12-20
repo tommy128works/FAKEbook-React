@@ -4,6 +4,7 @@ const NUMBER_OF_MONTHS = 12;
 const MAX_NUMBER_OF_DAYS = 31;
 const MAX_YEARS = 120;
 const user_sign_up_post_url = "http://localhost:3000/sign-up";
+const user_log_in_post_url = "http://localhost:3000/log-in";
 
 import "../styles/LandingPage.scss";
 
@@ -73,17 +74,17 @@ const LandingPage = () => {
       </div>
 
       <div id="landing-page__right-section">
-        <form id="login-form">
+        <form id="log-in-form" action={user_log_in_post_url} method="POST">
           <input
             type="text"
-            id="login_email"
-            name="login_email"
+            id="log_in_email"
+            name="log_in_email"
             placeholder="Email"
           />
           <input
             type="password"
-            id="login_password"
-            name="login_password"
+            id="log_in_password"
+            name="log_in_password"
             placeholder="Password"
           />
           <input type="submit" value="Log In" className="log-in-button" />
